@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeTime | Вход</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для поля с паролем и глазиком */
+        .password-wrapper { position: relative; display: flex; align-items: center; width: 100%; }
+        .password-wrapper input { padding-right: 40px; }
+        .toggle-password {
+            position: absolute; right: 10px; background: none; border: none;
+            cursor: pointer; color: #888; display: flex; align-items: center;
+        }
+        .toggle-password:hover { color: var(--accent); }
+        .toggle-password svg { width: 20px; height: 20px; }
+    </style>
+</head>
+<body>
+    <header><div class="container"><a href="index.html" class="logo">CoffeeTime</a></div></header>
+    
+    <div class="auth-box" style="background: #fff; padding: 30px; border-radius: 12px; max-width: 400px; margin: 50px auto;">
+        
+        <!-- ФОРМА ВХОДА -->
+        <h2>Вход</h2>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Почта">
+        </div>
+        <div class="form-group password-wrapper">
+            <input type="password" id="password" placeholder="Пароль">
+            <button type="button" class="toggle-password" onclick="togglePassword('password', this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+        </div>
+        <button class="btn" style="width:100%;" onclick="login()">Войти</button>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+        <!-- ФОРМА РЕГИСТРАЦИИ -->
+        <h2>Регистрация</h2>
+        <div class="form-group">
+            <input type="email" id="regEmail" placeholder="Почта">
+        </div>
+        <div class="form-group password-wrapper">
+            <input type="password" id="regPassword" placeholder="Пароль">
+            <button type="button" class="toggle-password" onclick="togglePassword('regPassword', this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+        </div>
+        <!-- НОВОЕ ПОЛЕ: ПОДТВЕРЖДЕНИЕ ПАРОЛЯ -->
+        <div class="form-group password-wrapper">
+            <input type="password" id="regPasswordConfirm" placeholder="Подтвердите пароль">
+            <button type="button" class="toggle-password" onclick="togglePassword('regPasswordConfirm', this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+        </div>
+        <button class="btn" style="width:100%; background:#555;" onclick="register()">Создать аккаунт</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

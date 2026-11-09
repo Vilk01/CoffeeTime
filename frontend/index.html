@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CoffeeTime</title><link rel="stylesheet" href="style.css"></head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">CoffeeTime</a>
+            <nav><ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="profile.html" id="lkLink">Кабинет</a></li>
+            </ul></nav>
+            <div>
+                <a href="cart.html" class="btn">Корзина (<span id="cartCount">0</span>)</a>
+                <a href="login.html" class="btn" id="authBtn">Войти</a>
+                <a href="#" class="btn" id="logoutBtn" style="display:none;" onclick="logout()">Выйти</a>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <h2 style="margin-top: 30px;">Наше меню</h2>
+        <div class="grid" id="productsGrid"></div>
+    </main>
+    <script src="script.js"></script>
+    <script>loadProducts();</script>
+</body>
+</html>

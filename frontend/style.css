@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --bg: #F9F6F0;
+    --text: #3E2723;
+    --accent: #D84315;
+    --accent-hover: #BF360C;
+    --card: #FFFFFF;
+    --header: #3E2723;
+    --border: #E0E0E0;
+    --gray: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--header);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: #E0E0E0;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.section-title {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-size: 36px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card-price {
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1920') center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 39, 35, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.auth-box {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: var(--accent);
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+}
+
+.post {
+    background-color: var(--card);
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sticker {
+    position: absolute;
+    font-size: 40px;
+    cursor: grab;
+    user-select: none;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.sticker:active {
+    cursor: grabbing;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    main.container {
+        flex-direction: column !important;
+        padding: 15px;
+    }
+
+    main.container aside {
+        width: 100% !important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    main.container aside .btn {
+        width: auto !important;
+        flex: 1;
+        margin-bottom: 0 !important;
+    }
+
+    section#adminContent {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .post, .cart-item {
+        padding: 15px;
+    }
+
+    .auth-box {
+        margin: 20px auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin: 30px 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+

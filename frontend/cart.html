@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Корзина</title><link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header><div class="container"><a href="index.html" class="logo">CoffeeTime</a></div></header>
+    <main class="container">
+        <h2 style="margin-top: 30px;">Корзина</h2>
+        <div id="cartItems"></div>
+        <h3 style="text-align:right; margin-top:20px;">Итого: <span id="total">0</span> ₽</h3>
+        <button class="btn" style="float:right; margin-top:20px;" onclick="checkout()">Оформить и получить чек</button>
+        <div id="receiptBox" style="display:none; margin-top:50px; background:#fff; padding:20px; border:1px dashed #000;">
+            <h3>Чек об оплате</h3>
+            <p id="receiptText"></p>
+            <button class="btn" onclick="window.print()">Распечатать чек</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script>renderCart();</script>
+</body>
+</html>
